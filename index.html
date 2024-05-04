@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeux Avion</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="avion">
+      <img src="airplane.png" alt="" />
+    </div>
+    <script>
+      let x = 0;
+      let y = 0;
+      let plane = document.getElementById("avion");
+
+      document.addEventListener("mousemove", function () {
+        x = event.clientX;
+        y = event.clientY;
+        console.log(x, y);
+        updatePlaneLocation(x, y);
+      });
+
+      function updatePlaneLocation(x, y) {
+        plane.style.left = x + "px";
+        plane.style.top = y + "px";
+      }
+    </script>
+  </body>
+</html>
